@@ -1,10 +1,12 @@
+set root   ../..
 set part   xc7a100tcsg324-1     ;# Nexys A7-100T. For the A7-50T: xc7a50ticsg324-1L
 set top    NexysTop
 set outDir vivado_out
+set build  $root/build
 
 file mkdir $outDir
 
-read_verilog -sv generated/NexysTop.sv
+read_verilog -sv $build/NexysTop.sv
 read_xdc constraints/Nexys-A7-100T-Master.xdc
 
 synth_design -top $top -part $part

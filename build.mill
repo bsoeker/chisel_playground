@@ -21,17 +21,21 @@ object `chisel_playground` extends SbtModule {
     "-deprecation",
     "-feature",
     "-Xcheckinit",
-    "-Ymacro-annotations",
+    "-Ymacro-annotations"
   )
   override def mvnDeps = Seq(
-    mvn"org.chipsalliance::chisel:$chiselVersion",
+    mvn"org.chipsalliance::chisel:$chiselVersion"
   )
   override def scalacPluginMvnDeps = Seq(
-    mvn"org.chipsalliance:::chisel-plugin:$chiselVersion",
+    mvn"org.chipsalliance:::chisel-plugin:$chiselVersion"
   )
   object test extends SbtTests with TestModule.ScalaTest {
     override def mvnDeps = Seq(
       mvn"org.scalatest::scalatest::3.2.19"
     )
   }
+}
+
+def build() = Task.Command {
+  chisel_playground.run()()
 }

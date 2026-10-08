@@ -8,7 +8,7 @@ object Emit {
       gen,
       firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info")
     )
-    val dir = Paths.get("generated")
+    val dir = Paths.get("build")
     Files.createDirectories(dir)
     Files.writeString(dir.resolve(fileName), sv.split("// ----- 8< -----").head)
   }
