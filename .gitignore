@@ -345,7 +345,7 @@ hs_err_pid*
 metals*
 .bloop
 
-generated/
+build/
 vivado*
 .Xil/
 clockInfo.txt
